@@ -25,7 +25,6 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/esp_mqtt_test1/libraries/PubSubClient}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/esp_mqtt_test1/libraries/PubSubClient/src}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/esp_mqtt_test1/libraries/ESP8266WiFi}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/esp_mqtt_test1/libraries/ESP8266WiFi/src}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/IoT_manager_mqtt_take1/core/core}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/IoT_manager_mqtt_take1/core/variant}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/IoT_manager_mqtt_take1/libraries/Wire}&quot;"/>
@@ -49,7 +48,6 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/esp_mqtt_test1/libraries/PubSubClient}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/esp_mqtt_test1/libraries/PubSubClient/src}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/esp_mqtt_test1/libraries/ESP8266WiFi}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/esp_mqtt_test1/libraries/ESP8266WiFi/src}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/IoT_manager_mqtt_take1/core/core}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/IoT_manager_mqtt_take1/core/variant}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/IoT_manager_mqtt_take1/libraries/Wire}&quot;"/>

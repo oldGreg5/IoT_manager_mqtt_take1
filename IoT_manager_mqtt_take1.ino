@@ -20,17 +20,24 @@
 #include <ESP8266HTTPUpdateServer.h>
 
 //const char* host = "esp8266-webupdate";
-const char *ssid = "EPOL_kd@012";        // cannot be longer than 32 characters!
-const char *pass = "epolepol";       // WiFi password
+//const char *ssid = "EPOL_kd@012";        // cannot be longer than 32 characters!
+//const char *pass = "epolepol";       // WiFi password
+const char *ssid = "babilons";        // cannot be longer than 32 characters!
+const char *pass = "thai0lai5";       // WiFi password
 
 String prefix = "/IoTmanager"; // global prefix for all topics - must be some as mobile device
 String deviceID = "dev01-kitchen"; // thing ID - unique device id in our project
 
 WiFiClient wclient;
+
 //OTA overhead
 ESP8266WebServer httpServer(80);
 ESP8266HTTPUpdateServer httpUpdater;
-//dd
+//telnet serial
+const uint16_t aport = 23;
+WiFiServer TelnetServer(aport);
+WiFiClient TelnetClient;
+
 // config for cloud mqtt broker by DNS hostname ( for example, cloudmqtt.com use: m20.cloudmqtt.com - EU, m11.cloudmqtt.com - USA )
 String mqttServerName = "iot.eclipse.org"; // for cloud broker - by hostname, from CloudMQTT account data
 int mqttport = 1883; // default 1883, but CloudMQTT.com use other, for example: 13191, 23191 (SSL), 33191 (WebSockets) - use from CloudMQTT account data
@@ -242,6 +249,7 @@ void initVar() {
 void pubStatus(String t, String payload) {
 	if (client.publish(t + "/status", payload)) {
 		Serial.println("Publish new status for " + t + ", value: " + payload);
+		printToTelnet("halo tu telnet yo!");
 	} else {
 		Serial.println("Publish new status for " + t + " FAIL!");
 	}
@@ -372,19 +380,24 @@ void setup() {
 	Serial.println(ESP.getFreeHeap());
 
 	//OTA overhead
+	WiFi.begin(ssid, pass);
+	while (WiFi.waitForConnectResult() != WL_CONNECTED) {
 		WiFi.begin(ssid, pass);
-		while (WiFi.waitForConnectResult() != WL_CONNECTED) {
-			WiFi.begin(ssid, pass);
-			Serial.println("WiFi failed, retrying.");
-		}
-		MDNS.begin(host);
-		httpUpdater.setup(&httpServer);
-		httpServer.begin();
-		MDNS.addService("http", "tcp", 80);
-		Serial.println("********************************************");
-		Serial.printf("http://");
-		Serial.print(WiFi.localIP());
-		Serial.print("/update");
+		Serial.println("WiFi failed, retrying.");
+	}
+
+	MDNS.begin(host);
+	httpUpdater.setup(&httpServer);
+	httpServer.begin();
+	MDNS.addService("http", "tcp", 80);
+	Serial.println("********************************************");
+	Serial.printf("http://");
+	Serial.print(WiFi.localIP());
+	Serial.print("/update\n");
+
+	//telnet serial
+	TelnetServer.begin();
+	TelnetServer.setNoDelay(true);
 }
 
 void loop() {
@@ -460,5 +473,15 @@ void loop() {
 			}
 			client.loop();
 		}
+	}
+}
+
+void printToTelnet(const char* c) {
+//Prints to telnet if connected
+	if (!TelnetClient) {  // otherwise it works only once
+		TelnetClient = TelnetServer.available();
+	}
+	if (TelnetClient.connected()) {
+		TelnetClient.println(c);
 	}
 }

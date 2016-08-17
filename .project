@@ -34,27 +34,42 @@
 		<link>
 			<name>core/core</name>
 			<type>2</type>
-			<location>C:/oldGreg/sloeber/arduinoPlugin/packages/esp8266/hardware/esp8266/2.3.0/cores/esp8266</location>
+			<location>D:/dev/eclipseArduino/arduinoPlugin/packages/esp8266/hardware/esp8266/2.3.0/cores/esp8266</location>
 		</link>
 		<link>
 			<name>core/variant</name>
 			<type>2</type>
-			<location>C:/oldGreg/sloeber/arduinoPlugin/packages/esp8266/hardware/esp8266/2.3.0/variants/nodemcu</location>
+			<location>D:/dev/eclipseArduino/arduinoPlugin/packages/esp8266/hardware/esp8266/2.3.0/variants/nodemcu</location>
+		</link>
+		<link>
+			<name>libraries/ESP8266HTTPUpdateServer</name>
+			<type>2</type>
+			<location>D:/dev/eclipseArduino/arduinoPlugin/packages/esp8266/hardware/esp8266/2.3.0/libraries/ESP8266HTTPUpdateServer</location>
+		</link>
+		<link>
+			<name>libraries/ESP8266WebServer</name>
+			<type>2</type>
+			<location>D:/dev/eclipseArduino/arduinoPlugin/packages/esp8266/hardware/esp8266/2.3.0/libraries/ESP8266WebServer</location>
 		</link>
 		<link>
 			<name>libraries/ESP8266WiFi</name>
 			<type>2</type>
-			<location>C:/oldGreg/sloeber/arduinoPlugin/packages/esp8266/hardware/esp8266/2.3.0/libraries/ESP8266WiFi</location>
+			<location>D:/dev/eclipseArduino/arduinoPlugin/packages/esp8266/hardware/esp8266/2.3.0/libraries/ESP8266WiFi</location>
+		</link>
+		<link>
+			<name>libraries/ESP8266mDNS</name>
+			<type>2</type>
+			<location>D:/dev/eclipseArduino/arduinoPlugin/packages/esp8266/hardware/esp8266/2.3.0/libraries/ESP8266mDNS</location>
 		</link>
 		<link>
 			<name>libraries/PubSubClient</name>
 			<type>2</type>
-			<location>C:/Users/janu/Arduino/libraries/PubSubClient</location>
+			<location>C:/Users/oldGr/Documents/Arduino/libraries/PubSubClient</location>
 		</link>
 		<link>
 			<name>libraries/Wire</name>
 			<type>2</type>
-			<location>C:/oldGreg/sloeber/arduinoPlugin/packages/esp8266/hardware/esp8266/2.3.0/libraries/Wire</location>
+			<location>D:/dev/eclipseArduino/arduinoPlugin/packages/esp8266/hardware/esp8266/2.3.0/libraries/Wire</location>
 		</link>
 	</linkedResources>
 </projectDescription>
